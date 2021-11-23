@@ -3,6 +3,7 @@ package com.cynnox.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,6 +42,13 @@ public class StudentController {
 		Student newStudent = service.save(s);
 	}
 
+	//delete a student
+	@DeleteMapping("/students/delete/{id}")
+	public void deleteStudent(@PathVariable int id) {
+		System.out.println("end point");
+		Student newStudent = service.deleteOne(id);
+	}
+	
 	
 
 

@@ -1,10 +1,11 @@
 package com.cynnox.demo.model;
 
+import java.util.Date;
 
 public class Student {
 	private int id;
 	private String name;
-	private java.util.Date dob;
+	private Date dob;
 	
 	public Student(int id, String name, java.util.Date date) {
 		super();

@@ -1,7 +1,9 @@
 package com.cynnox.demo.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -13,7 +15,11 @@ public class StudentService {
 	public static int stdCount=5; 
 	
 	private static List<Student> students=new ArrayList<>();  
-	
+	static LocalDateTime now = LocalDateTime.now();
+	private void syso() {
+		System.out.println(now);
+	}
+
 	static  
 	{  
 	//adding users to the list  
@@ -27,7 +33,8 @@ public class StudentService {
 	//method that retrieve all students from the list  
 	public List<Student> findAll()  
 	{  
-	return students;  
+		syso();
+	return students; 
 	}  
 	
 	//method that add the students in the list   
@@ -52,7 +59,18 @@ public class StudentService {
 		return null;
 	}
 	
-	
+	//delete student
+	public Student deleteOne(int id) {
+		Iterator<Student> i = students.iterator();
+		while(i.hasNext()) {
+			Student student = i.next();
+			if(student.getId() == id) {
+				i.remove();
+				return student;
+			}
+		}
+		return null;
+	}
 	
 	
 
