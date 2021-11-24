@@ -18,7 +18,6 @@ public NewLogin() {
 	// TODO Auto-generated constructor stub
 }
 
-
 public NewLogin(int id, String name, LocalDateTime join, Object course, Object[] education) {
 	super();
 	this.id = id;
@@ -27,7 +26,6 @@ public NewLogin(int id, String name, LocalDateTime join, Object course, Object[]
 	this.course = course;
 	this.education = education;
 }
-
 
 
 public String getName() {
@@ -39,7 +37,7 @@ public void setName(String name) {
 public Object getCourse() {
 	return course;
 }
-public void setCourse(Object course) {
+public void setCourse(Course course) {
 	this.course = course;
 }
 

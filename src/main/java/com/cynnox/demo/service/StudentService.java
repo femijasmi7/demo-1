@@ -1,5 +1,6 @@
 package com.cynnox.demo.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,11 +24,11 @@ public class StudentService {
 	static  
 	{  
 	//adding users to the list  
-		students.add(new Student(1, "John",  new Date()));  
-		students.add(new Student(2, "Robert",  new Date()));  
-		students.add(new Student(3, "Adam",  new Date()));  
-		students.add(new Student(4, "Andrew",  new Date()));  
-		students.add(new Student(5, "Jack",  new Date()));  
+		students.add(new Student(1, "John",  new Date(), LocalDate.of(2021, 11, 11)));  
+		students.add(new Student(2, "Robert",  new Date(), LocalDate.of(2021, 05, 11)));  
+		students.add(new Student(3, "Adam",  new Date(), LocalDate.of(2021, 04, 11)));  
+		students.add(new Student(4, "Andrew",  new Date(), LocalDate.of(2021, 01, 11)));  
+		students.add(new Student(5, "Jack",  new Date(), LocalDate.of(2021, 12, 11)));  
 	}  
 	
 	//method that retrieve all students from the list  
@@ -38,7 +39,7 @@ public class StudentService {
 	}  
 	
 	//method that add the students in the list   
-	public Student save(Student s)  
+	public Student addStudent(Student s)  
 	{  
 	if(s.getId() == 0)  
 	{  

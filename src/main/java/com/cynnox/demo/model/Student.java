@@ -1,18 +1,47 @@
 package com.cynnox.demo.model;
 
+import java.time.LocalDate;
 import java.util.Date;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class Student {
 	private int id;
+//	@NotBlank(message = "Name is mandatory")
+	@NotNull
 	private String name;
 	private Date dob;
+	private LocalDate joining;
+
 	
-	public Student(int id, String name, java.util.Date date) {
+	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Student(int id, String name, Date dob, LocalDate joining) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.dob = date;
+		this.dob = dob;
+		this.joining = joining;
 	}
+
+	
+
+	public LocalDate getJoining() {
+		return joining;
+	}
+
+
+	public void setJoining(LocalDate joining) {
+		this.joining = joining;
+	}
+
+
 	public String getName() {
 		return name;
 	}

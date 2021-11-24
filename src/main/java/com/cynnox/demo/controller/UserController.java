@@ -1,5 +1,6 @@
 package com.cynnox.demo.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,10 +29,11 @@ public class UserController {
 		System.out.println(req);
 		return ResponseEntity.ok().body(req);
 	}
+
 	
-	
+//validate user	
 	@PostMapping("/v1/user/validate")
-	public ResponseEntity<?>  validateUser(@Validated
+	public ResponseEntity<?>  validateUser(@Value(value = "")
 			@RequestBody UserReq req) {
 		System.out.println("User add endpoint");
 		System.out.println(req);
@@ -58,14 +60,5 @@ public ResponseEntity<?>  udateUser(
 }
 
 
-//@value
-@GetMapping("/v1/user/value")
-public ResponseEntity<?>  defaultUser(
-		@RequestBody User user) {
-	
-	System.out.println("User add endpoint");
-	return ResponseEntity.ok().body(user);
-	
-}
 
 }
